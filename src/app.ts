@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import { WordleController } from './controllers/WordleController';
+import { WordleRoute } from './routes/WordleRoutes';
 
 
 const app: express.Application = express();
 
 app.use(cors());
-app.use('/wordle', WordleController);
+app.use('/wordle', WordleRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World yes!');
