@@ -7,6 +7,11 @@ export const WordleRoute: Router = Router();
 
 const controller = new WordleController();
 
-WordleRoute.post("/", bodyParser.json(), (req: Request, res: Response) => {
+WordleRoute.post("/win", bodyParser.json(), (req: Request, res: Response) => {
     controller.checkWinCondition(req, res);
+    
+});
+
+WordleRoute.post("/color", bodyParser.json(), (req: Request, res: Response) => {
+    controller.setColors(req, res);
 });

@@ -12,11 +12,19 @@ class WordleController {
 
     async checkWinCondition(req: Request, res: Response) {
         const currWord = req.body.currWord;
-        const word = req.body.word;
         const pointer = req.body.pointer;
-        const result =  this.WordleService.checkWin(currWord, word, pointer);
+        const result =  this.WordleService.checkWin(currWord, pointer);
         res.send(result);
     }
+
+    async setColors(req: Request, res: Response) {
+        const wordColoring = req.body.wordColoring;
+        const newBoardColor = req.body.newBoardColor;
+        const row = req.body.row;
+        const data = this.WordleService.setColors(wordColoring, newBoardColor, row);
+        res.send(data);
+    }
+
 
 }
 
