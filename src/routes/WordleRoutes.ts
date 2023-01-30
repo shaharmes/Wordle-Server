@@ -1,6 +1,6 @@
 import { WordleController } from "../controllers/WordleController";
 import { Router, Request, Response } from "express";
-import bodyParser from 'body-parser';
+import bodyParser from "body-parser";
 
 
 export const WordleRoute: Router = Router();
